@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>LG SSO</title>
+<style>
+  :root {
+    --bg: #f6f7f9;
+    --card-bg: #ffffff;
+    --border: #e2e5ea;
+    --text: #1a1d23;
+    --text-muted: #6b7280;
+    --accent: #2563eb;
+    --accent-bg: #eef2ff;
+    --tag-bg: #f1f3f5;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #14161a;
+      --card-bg: #1c1f26;
+      --border: #2b2f38;
+      --text: #e7e9ec;
+      --text-muted: #9aa0aa;
+      --accent: #6b93ff;
+      --accent-bg: #1f2540;
+      --tag-bg: #262a33;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  header {
+    padding: 40px 24px 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  header h1 {
+    margin: 0 0 6px;
+    font-size: 1.6rem;
+  }
+  header p {
+    margin: 0;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+  main {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 24px 60px;
+  }
+  section {
+    margin-top: 32px;
+  }
+  section h2 {
+    font-size: 1.05rem;
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 10px;
+  }
+  .card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease;
+  }
+  a.card:hover {
+    border-color: var(--accent);
+  }
+  .card.disabled {
+    opacity: 0.7;
+  }
+  .card .name {
+    font-weight: 600;
+    font-size: 0.95rem;
+  }
+  .card .desc {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+  }
+  .card .addr {
+    font-size: 0.78rem;
+    color: var(--accent);
+    word-break: break-all;
+  }
+  .card.disabled .addr {
+    color: var(--text-muted);
+    font-style: italic;
+  }
+  .tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: var(--tag-bg);
+    color: var(--text-muted);
+    width: fit-content;
+  }
+  .tag.env-dev { background: var(--accent-bg); color: var(--accent); }
+  .tag.env-prod { background: #fdeaea; color: #c0392b; }
+  @media (prefers-color-scheme: dark) {
+    .tag.env-prod { background: #3a2426; color: #ff8a8a; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>LG SSO</h1>
+</header>
+
+<main>
+
+  <section>
+    <h2>Access request</h2>
+    <div class="grid">
+      <a class="card" href="https://itemku.atlassian.net/servicedesk/customer/portal/4/group/44/create/96" target="_blank" rel="noopener">
+        <span class="name">Access Request portal</span>
+        <span class="desc">Email, Confluence, Jira, GitHub, Claude, and tool access requests</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Documentation</h2>
+    <div class="grid">
+      <a class="card" href="https://itemku.atlassian.net/wiki/spaces/LG/overview" target="_blank" rel="noopener">
+        <span class="name">Confluence</span>
+        <span class="desc">LapakGaming space</span>
+      </a>
+      <a class="card" href="https://itemku.atlassian.net/jira" target="_blank" rel="noopener">
+        <span class="name">Jira</span>
+        <span class="desc">LapakGaming projects</span>
+      </a>
+      <a class="card" href="https://claude.ai/code/artifact/ae93082a-7b7a-47f7-a772-baffaca86cbf" target="_blank" rel="noopener">
+        <span class="name">Onboarding Handbook</span>
+        <span class="desc">Glossary + system overview (ask buddy to share if it doesn't open)</span>
+      </a>
+      <a class="card" href="https://drive.google.com/drive/folders/1dGnmu5dhQDEnTsNPMTgvFWXXM2myiq0L" target="_blank" rel="noopener">
+        <span class="name">Engineering Guidelines</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Development</h2>
+    <div class="grid">
+      <a class="card" href="https://github.com/lapakgaming" target="_blank" rel="noopener">
+        <span class="name">GitHub</span>
+      </a>
+      <a class="card" href="https://documenter.getpostman.com/view/55972018/2sBY4HU3qq#intro" target="_blank" rel="noopener">
+        <span class="name">Postman</span>
+        <span class="desc">Shared credentials &mdash; ask your buddy</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Infrastructure &amp; services</h2>
+    <div class="grid">
+      <a class="card" href="http://10.150.0.21:8080/" target="_blank" rel="noopener">
+        <span class="name">Jenkins</span>
+        <span class="desc">CI/CD trigger</span>
+      </a>
+      <a class="card" href="https://argocd-gcp.dev.lapakgaming.buka20-internal.com" target="_blank" rel="noopener">
+        <span class="tag env-dev">DEV</span>
+        <span class="name">ArgoCD &mdash; Dev</span>
+      </a>
+      <a class="card" href="https://argocd-gcp.prod.lapakgaming.buka20-internal.com" target="_blank" rel="noopener">
+        <span class="tag env-prod">PROD</span>
+        <span class="name">ArgoCD &mdash; Prod</span>
+      </a>
+      <a class="card" href="https://console.cloud.google.com" target="_blank" rel="noopener">
+        <span class="name">GCP console</span>
+        <span class="desc">GKE, Cloud SQL, Cloud Run, GCS</span>
+      </a>
+      <a class="card" href="https://dash.cloudflare.com" target="_blank" rel="noopener">
+        <span class="name">Cloudflare</span>
+        <span class="desc">WAF management &mdash; live WAF, no Imperva</span>
+      </a>
+      <a class="card" href="https://app.datadoghq.com" target="_blank" rel="noopener">
+        <span class="name">Datadog</span>
+        <span class="desc">Backend + frontend metrics, logs, APM</span>
+      </a>
+      <a class="card" href="http://monitoring.lapakgaming.com/" target="_blank" rel="noopener">
+        <span class="name">Grafana</span>
+      </a>
+      <a class="card" href="http://10.150.0.57:9093/#/alerts" target="_blank" rel="noopener">
+        <span class="name">Prometheus</span>
+        <span class="desc">Alert-status monitoring</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Config &amp; secrets</h2>
+    <div class="grid">
+      <div class="card disabled">
+        <span class="name">Consul Server</span>
+        <span class="desc">Legacy config (PHP services) &mdash; get from local consul repo</span>
+      </div>
+      <div class="card disabled">
+        <span class="name">Kubernetes ConfigMap</span>
+        <span class="desc">New config (Go services on GKE) &mdash; via ArgoCD above</span>
+      </div>
+      <div class="card disabled">
+        <span class="name">Ansible Vault</span>
+        <span class="desc">Legacy secrets &mdash; get from local ansible repo, must be decrypted first</span>
+      </div>
+      <a class="card" href="https://10.150.0.32:8200" target="_blank" rel="noopener">
+        <span class="tag env-dev">DEV</span>
+        <span class="name">Vault &mdash; Dev</span>
+        <span class="desc">New secrets</span>
+      </a>
+      <a class="card" href="https://10.170.0.54:8200" target="_blank" rel="noopener">
+        <span class="tag env-prod">PROD</span>
+        <span class="name">Vault &mdash; Prod</span>
+        <span class="desc">New secrets</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Role-specific &mdash; Demand</h2>
+    <div class="grid">
+      <a class="card" href="https://imagekit.io/dashboard" target="_blank" rel="noopener">
+        <span class="name">ImageKit</span>
+        <span class="desc">Image tooling</span>
+      </a>
+      <a class="card" href="https://dashboard.xendit.co" target="_blank" rel="noopener">
+        <span class="name">Xendit</span>
+        <span class="desc">Payment gateway &mdash; ID, PH</span>
+      </a>
+      <a class="card" href="https://dashboard.midtrans.com" target="_blank" rel="noopener">
+        <span class="name">Midtrans</span>
+        <span class="desc">Payment gateway</span>
+      </a>
+      <div class="card disabled">
+        <span class="name">Razer</span>
+        <span class="desc">Payment gateway &mdash; ask your buddy for the merchant portal link</span>
+      </div>
+      <div class="card disabled">
+        <span class="name">DANA</span>
+        <span class="desc">Payment gateway &mdash; ask your buddy for the merchant portal link</span>
+      </div>
+      <a class="card" href="https://www.paypal.com/businessmanage/home" target="_blank" rel="noopener">
+        <span class="name">PayPal</span>
+        <span class="desc">Payment gateway</span>
+      </a>
+      <a class="card" href="https://analytics.google.com" target="_blank" rel="noopener">
+        <span class="name">Google Analytics</span>
+      </a>
+      <a class="card" href="https://tagmanager.google.com" target="_blank" rel="noopener">
+        <span class="name">Google Tag Manager</span>
+      </a>
+    </div>
+  </section>
+
+  <section>
+    <h2>HR &amp; learning</h2>
+    <div class="grid">
+      <a class="card" href="https://buka.darwinbox.com/" target="_blank" rel="noopener">
+        <span class="name">NABILA</span>
+        <span class="desc">HR dashboard</span>
+      </a>
+      <a class="card" href="https://buka.disprz.com/" target="_blank" rel="noopener">
+        <span class="name">LMS</span>
+      </a>
+      <a class="card" href="https://sites.google.com/bukalapak.io/bukainfo/home" target="_blank" rel="noopener">
+        <span class="name">Company Portal</span>
+        <span class="desc">BukaInfo</span>
+      </a>
+    </div>
+  </section>
+
+</main>
+
+</body>
+</html>
